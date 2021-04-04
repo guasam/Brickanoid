@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 public class JustForFun : MonoBehaviour
@@ -12,5 +13,10 @@ public class JustForFun : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void OnDrawGizmos()
+    {
+        Handles.Label(Vector3.zero, "Whats going on man");
     }
 }
