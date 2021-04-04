@@ -3,20 +3,12 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    private readonly float speed = 15f;
-    private readonly float maxPosX = 5.25f;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private float speed = 20f;
+    private float maxPosX = 5.25f;
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        #region Handle Movement
-
         if (Keyboard.current.leftArrowKey.isPressed)
         {
             transform.position += Vector3.left * speed * Time.deltaTime;
@@ -28,7 +20,5 @@ public class PlayerController : MonoBehaviour
 
         // Clamp the position so the player cannot move beyond walls
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -maxPosX, maxPosX), 0, 0);
-
-        #endregion
     }
 }
