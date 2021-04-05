@@ -22,9 +22,14 @@ public class BallController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // Change velocity based on reflection for current direction
-        rb.velocity = Vector3.Reflect(direction * speed, collision.GetContact(0).normal);
+        rb.velocity = Vector3.Reflect(direction, collision.GetContact(0).normal) * speed;
 
         // Set new velocity direction
         direction = rb.velocity.normalized;
+    }
+
+    private void OnGUI()
+    {
+        GUI.Label(new Rect(10, 10, 100, 100), "Checking whatsup");
     }
 }
