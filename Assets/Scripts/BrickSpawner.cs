@@ -15,7 +15,7 @@ public class BrickSpawner : MonoBehaviour
         // Vertical bricks loop
         for (int i=0; i < vrow; i++)
         {
-            // Last brick position
+            // Last brick position cache
             Vector3 lastBrickPos = Vector3.zero;
 
             // Horizontal bricks loop
@@ -26,11 +26,9 @@ public class BrickSpawner : MonoBehaviour
 
                 // Instantiate new brick within spawner parent
                 GameObject brick = Instantiate(brickPrefab, transform);
-
-                // Set brick position
                 brick.transform.position = position;
 
-                // Cache last brick position
+                // Update cache for last brick
                 lastBrickPos = position;
             }
         }
