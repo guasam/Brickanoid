@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BallController : MonoBehaviour
 {
-    private float speed = 5f;
+    private float speed = 15f;
     private Rigidbody rb;
     private Vector3 direction = new Vector3(1, 0, 1);
 
@@ -26,5 +26,11 @@ public class BallController : MonoBehaviour
 
         // Set new velocity direction
         direction = rb.velocity.normalized;
+
+        // Destroy brick on collision
+        if (collision.collider.CompareTag("Brick"))
+        {
+            Destroy(collision.gameObject);
+        }
     }
 }

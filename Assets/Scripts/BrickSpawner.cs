@@ -9,7 +9,7 @@ public class BrickSpawner : MonoBehaviour
     void Start()
     {
         int hrow = 5;
-        int vrow = 5;
+        int vrow = 10;
         Vector3 brickSize = brickPrefab.transform.localScale;
 
         // Vertical bricks loop
