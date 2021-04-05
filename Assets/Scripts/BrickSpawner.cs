@@ -21,14 +21,17 @@ public class BrickSpawner : MonoBehaviour
             // Horizontal bricks loop
             for (int j = 0; j < hrow; j++)
             {
-                // Calculate position for new brick
+                // Calculate position of brick
                 Vector3 position = transform.position + new Vector3(brickSize.x + lastBrickPos.x, 0, brickSize.z * -i);
 
-                // Instantiate new brick within spawner parent
+                // Instantiate new brick in spawner
                 GameObject brick = Instantiate(brickPrefab, transform);
                 brick.transform.position = position;
 
-                // Update cache for last brick
+                // Random material color
+                brick.GetComponent<Renderer>().material.color = Random.ColorHSV();
+
+                // Update last brick cache
                 lastBrickPos = position;
             }
         }

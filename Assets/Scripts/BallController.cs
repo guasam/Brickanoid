@@ -27,9 +27,4 @@ public class BallController : MonoBehaviour
         // Set new velocity direction
         direction = rb.velocity.normalized;
     }
-
-    private void OnGUI()
-    {
-        GUI.Label(new Rect(10, 10, 100, 100), "Checking whatsup");
-    }
 }
